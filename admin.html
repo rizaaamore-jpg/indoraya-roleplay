@@ -2,103 +2,55 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin Panel</title>
 <link rel="stylesheet" href="theme.css">
-
-<style>
-body{
-  margin:0;
-  background:#000;
-  font-family:Segoe UI,sans-serif;
-  color:white;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:100vh;
-}
-.panel{
-  width:100%;
-  max-width:360px;
-  background:rgba(255,255,255,.05);
-  backdrop-filter:blur(12px);
-  border-radius:18px;
-  padding:25px;
-}
-input,button{
-  width:100%;
-  margin-top:12px;
-  padding:14px;
-  border-radius:12px;
-  border:none;
-}
-input{background:#111;color:white}
-button{
-  background:linear-gradient(135deg,#2d2dff,#7f00ff);
-  color:white;
-  font-weight:bold;
-}
-.hidden{display:none}
-</style>
 </head>
 
 <body>
-<div class="panel">
+<div class="card">
+  <h1>Admin Panel</h1>
 
-<div id="login">
-  <h3>Admin Login</h3>
-  <input type="password" id="password" placeholder="Password">
-  <button onclick="login()">Login</button>
-</div>
+  <input id="pass" type="password" placeholder="Password admin" style="width:100%;padding:10px;border-radius:10px">
 
-<div id="admin" class="hidden">
-  <h3>Logo URL</h3>
-  <input id="logoInput">
+  <div id="panel" style="display:none">
 
-  <h3>Clan</h3>
-  <input id="clanInput">
-  <input id="discordInput">
-  <input id="tiktokClanInput">
+    <input id="logo" placeholder="Logo URL">
+    <input id="name" placeholder="Nama Clan">
+    <input id="dc" placeholder="Link Discord Clan">
+    <input id="ttc" placeholder="TikTok Clan">
+    <input id="ig" placeholder="Instagram Admin">
+    <input id="tta" placeholder="TikTok Admin">
 
-  <h3>Admin</h3>
-  <input id="igInput">
-  <input id="ttInput">
-
-  <button onclick="save()">Simpan</button>
-</div>
-
+    <a onclick="save()">Simpan Perubahan</a>
+  </div>
 </div>
 
 <script>
-  // 🔑 PASSWORD ADMIN (GANTI DI SINI)
-  const REAL_PASSWORD = "rizaa123";
+const REAL_PASSWORD = "rizaa123"; // GANTI PASSWORD DI SINI
 
-  function login(){
-    if(password.value === REAL_PASSWORD){
-      login.classList.add("hidden");
-      admin.classList.remove("hidden");
+pass.oninput = ()=>{
+  if(pass.value === REAL_PASSWORD){
+    panel.style.display="block";
+    pass.style.display="none";
 
-      logoInput.value = localStorage.getItem("logo");
-      clanInput.value = localStorage.getItem("clanName");
-      discordInput.value = localStorage.getItem("discordClan");
-      tiktokClanInput.value = localStorage.getItem("tiktokClan");
-      igInput.value = localStorage.getItem("igAdmin");
-      ttInput.value = localStorage.getItem("ttAdmin");
-    }else{
-      alert("Password salah");
-    }
+    logo.value = localStorage.getItem("logo");
+    name.value = localStorage.getItem("clanName");
+    dc.value = localStorage.getItem("discordClan");
+    ttc.value = localStorage.getItem("tiktokClan");
+    ig.value = localStorage.getItem("igAdmin");
+    tta.value = localStorage.getItem("ttAdmin");
   }
+}
 
-  function save(){
-    localStorage.setItem("logo",logoInput.value);
-    localStorage.setItem("clanName",clanInput.value);
-    localStorage.setItem("discordClan",discordInput.value);
-    localStorage.setItem("tiktokClan",tiktokClanInput.value);
-    localStorage.setItem("igAdmin",igInput.value);
-    localStorage.setItem("ttAdmin",ttInput.value);
-    alert("Data berhasil disimpan");
-  }
+function save(){
+  localStorage.setItem("logo",logo.value);
+  localStorage.setItem("clanName",name.value);
+  localStorage.setItem("discordClan",dc.value);
+  localStorage.setItem("tiktokClan",ttc.value);
+  localStorage.setItem("igAdmin",ig.value);
+  localStorage.setItem("ttAdmin",tta.value);
+  alert("Berhasil disimpan!");
+}
 </script>
-
 </body>
 </html>
