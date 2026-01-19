@@ -51,7 +51,7 @@ function logout() {
 // ================= DATA SAVE =================
 function save() {
   const data = {
-    name: getVal("INDORAYA ROLEPLAY #SERVER FRESHH", "INDORAYA ROLEPLAY #SERVER FRESH"),
+    name: getVal("name", "INDORAYA ROLEPLAY #SERVER FRESH"),
     discord: getVal("discord", "https://discord.gg/"),
     tiktokClan: getVal("tiktokClan", "https://tiktok.com"),
     tiktokAdmin: getVal("tiktokAdmin", "https://tiktok.com"),
