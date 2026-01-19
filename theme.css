@@ -1,94 +1,67 @@
 *{
+  font-family: Arial, sans-serif;
   box-sizing:border-box;
-  font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
   margin:0;
   min-height:100vh;
-  background:linear-gradient(180deg,#b00000,#ffffff);
+  background:linear-gradient(180deg,#c10000,#ffffff);
   display:flex;
   justify-content:center;
   align-items:center;
 }
 
-@keyframes fadeScale{
-  from{opacity:0; transform:scale(.9);}
-  to{opacity:1; transform:scale(1);}
-}
-
-@keyframes slideUp{
-  from{opacity:0; transform:translateY(25px);}
-  to{opacity:1; transform:translateY(0);}
-}
-
 .container{
-  max-height:90vh;
-  overflow:auto;
+  text-align:center;
+  width:100%;
+  max-width:360px;
 }
 
 .logo{
-  width:110px;
-  height:110px;
+  width:120px;
+  height:120px;
   border-radius:50%;
   object-fit:cover;
   background:#fff;
   padding:6px;
   box-shadow:0 0 25px rgba(255,0,0,.6);
-  margin-bottom:14px;
 }
 
 h1{
   font-size:20px;
+  margin:15px 0;
 }
 
 .btn{
-  display:block;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  text-decoration:none;
+  margin:10px auto;
   padding:14px;
-  margin:12px 0;
-  background:#b00000;
-  color:white;
-  text-decoration:none;
-  border-radius:12px;
+  border-radius:30px;
   font-weight:bold;
-  animation:slideUp .9s ease forwards;
-}
-
-.admin-links a{
-  display:block;
-  margin-top:8px;
-  color:#b00000;
-  text-decoration:none;
-  font-size:14px;
-  animation:slideUp .9s ease forwards;
-}
-
-input, button{
   width:100%;
-  padding:12px;
-  margin:10px 0;
-  border-radius:10px;
-  border:1px solid #ccc;
-  animation:slideUp .9s ease forwards;
+  max-width:300px;
 }
 
-button{
-  background:#b00000;
-  color:white;
-  border:none;
-  font-weight:bold;
-  cursor:pointer;
+.discord{ background:#5865F2; color:#fff; }
+.tiktok{ background:#000; color:#fff; }
+
+.outline{
+  border:2px solid #c10000;
+  color:#c10000;
+  background:#fff;
 }
 
-.logout{
-  background:#555;
+.admin{
+  background:#c10000;
+  color:#fff;
+  margin-top:20px;
 }
 
-.hidden{
-  display:none;
-}
-
-.note{
-  font-size:12px;
-  color:#666;
+.admin-section{
+  margin-top:10px;
 }
