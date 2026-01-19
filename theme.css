@@ -1,0 +1,52 @@
+/* =========================
+   THEME INDORAYA ROLEPLAY
+   ========================= */
+
+:root{
+  --bg-main: #0a0a0a;
+  --bg-card: rgba(10,10,10,.85);
+
+  --primary: #b11226;
+  --primary-glow: #ff2a2a;
+
+  --accent: #f5c542;
+  --text-main: #f2f2f2;
+}
+
+/* GLOBAL */
+body{
+  margin:0;
+  font-family:Segoe UI, sans-serif;
+  background:radial-gradient(circle at top,#1a0005,var(--bg-main));
+  color:var(--text-main);
+}
+
+/* CARD / PANEL */
+.card, .panel{
+  background:var(--bg-card);
+  box-shadow:0 0 40px rgba(177,18,38,.5);
+  border-radius:22px;
+}
+
+/* LOGO */
+.logo{
+  box-shadow:0 0 30px var(--primary-glow);
+  border:3px solid var(--accent);
+}
+
+/* LINK & BUTTON */
+a, button{
+  background:linear-gradient(135deg,var(--primary),var(--primary-glow));
+  color:white;
+  border:none;
+}
+
+a:hover, button:hover{
+  box-shadow:0 0 20px var(--accent);
+}
+
+/* SECTION / TITLE */
+.section, h3{
+  color:var(--accent);
+  letter-spacing:1px;
+}
