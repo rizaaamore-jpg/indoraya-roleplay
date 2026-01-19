@@ -2,46 +2,45 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>INDORAYA ROLEPLAY</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INDORAYA ROLEPLAY COMMUNITY</title>
   <link rel="stylesheet" href="theme.css">
 </head>
 <body>
 
-<section class="fullscreen">
-  <div class="card">
-    <img id="logo" class="logo" alt="Logo Indoraya">
-    <h1 id="clanName">INDORAYA ROLEPLAY</h1>
+<script>
+if (!localStorage.getItem("init")) {
+  localStorage.setItem("NamaClan","INDORAYA ROLEPLAY COMMUNITY");
+  localStorage.setItem("DiscordClan","https://discord.gg/seQVnBbst8");
+  localStorage.setItem("TiktokClan","https://www.tiktok.com/@irp_official");
+  localStorage.setItem("TiktokAdmin","https://www.tiktok.com/@scrett_gtwl");
+  localStorage.setItem("InstagramAdmin","https://www.instagram.com/@zyraxx_18");
+  localStorage.setItem("init","1");
+}
+</script>
 
-    <div class="section">COMMUNITY</div>
-    <a id="discordClan" class="btn" target="_blank">DISCORD INDORAYA ROLEPLAY</a>
+<div class="screen center">
+  <div class="card">
+    <h1 id="clanName">INDORAYA ROLEPLAY</h1>
+    <p class="subtitle">COMMUNITY</p>
+
+    <a id="discord" class="btn" target="_blank">DISCORD INDORAYA ROLEPLAY</a>
     <a id="tiktokClan" class="btn" target="_blank">TIKTOK INDORAYA ROLEPLAY</a>
 
-    <div class="section">ADMIN</div>
-    <a id="igAdmin" class="btn ghost" target="_blank">INSTAGRAM ADMIN</a>
-    <a id="ttAdmin" class="btn ghost" target="_blank">TIKTOK ADMIN</a>
+    <div class="divider">ADMIN INDORAYA</div>
 
-    <a href="admin.html" class="admin-link">⚙LOGIN ADMIN</a>
+    <a id="igAdmin" class="btn" target="_blank">INSTAGRAM ADMIN</a>
+    <a id="ttAdmin" class="btn" target="_blank">TIKTOK ADMIN</a>
+
+    <a href="login.html" class="btn outline">LOGIN ADMIN</a>
   </div>
-</section>
+</div>
 
 <script>
-if (!localStorage.getItem("initialized")) {
-  localStorage.setItem("logo","https://cdn.discordapp.com/attachments/1462588340317720753/1462724110932115615/IMG-20260114-WA0012.jpg");
-  localStorage.setItem("clanName","INDORAYA ROLEPLAY");
-  localStorage.setItem("discordClan","https://discord.gg/Dh5xAcdMHP");
-  localStorage.setItem("tiktokClan","https://www.tiktok.com/@irp_official");
-  localStorage.setItem("igAdmin","https://www.instagram.com/zyraxx_18");
-  localStorage.setItem("ttAdmin","https://www.tiktok.com/@screet_gtwl");
-  localStorage.setItem("initialized","yes");
-}
-
-logo.src = localStorage.getItem("logo");
-clanName.innerText = localStorage.getItem("clanName");
-discordClan.href = localStorage.getItem("discordClan");
-tiktokClan.href = localStorage.getItem("tiktokClan");
-igAdmin.href = localStorage.getItem("igAdmin");
-ttAdmin.href = localStorage.getItem("ttAdmin");
+document.getElementById("clanName").innerText = localStorage.getItem("NamaClan");
+document.getElementById("discord").href = localStorage.getItem("DiscordClan");
+document.getElementById("tiktokClan").href = localStorage.getItem("TiktokClan");
+document.getElementById("igAdmin").href = localStorage.getItem("InstagramAdmin");
+document.getElementById("ttAdmin").href = localStorage.getItem("TiktokAdmin");
 </script>
 
 </body>
