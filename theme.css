@@ -77,6 +77,11 @@ h1{
   margin-top:10px;
 }
 
+.fade {
+  opacity: 0;
+  animation: fadeUp .6s ease forwards;
+}
+
 /* ===== ANIMATION CORE ===== */
 @keyframes fadeUp {
   from {
