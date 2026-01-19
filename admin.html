@@ -1,86 +1,29 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Admin Panel - Indoraya</title>
-  <link rel="stylesheet" href="theme.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel</title>
+<link rel="stylesheet" href="theme.css">
 </head>
 <body>
 
-<!-- LOGIN -->
 <div class="container" id="loginBox">
   <h1>Admin Login</h1>
-  <input type="password" id="password" placeholder="Password Admin">
-  <button onclick="login()">Login</button>
+  <input id="password" type="password" placeholder="Password" class="btn outline">
+  <button onclick="login()" class="btn admin">Login</button>
 </div>
 
-<!-- ADMIN PANEL -->
-<div class="container hidden" id="adminPanel">
-  <h1>Admin Panel</h1>
-
-  <input id="clanName" placeholder="Nama Clan">
-  <input id="discordClan" placeholder="Link Discord Clan">
-  <input id="tiktokClan" placeholder="Link TikTok Clan">
-
-  <button onclick="save()">Simpan</button>
-  <button class="logout" onclick="logout()">Logout</button>
-
-  <p class="note">
-    Kosongkan input jika tidak ingin mengubah data
-  </p>
+<div class="container" id="panel" style="display:none;">
+  <h1>Edit Data</h1>
+  <input id="name" placeholder="Nama Clan" class="btn outline">
+  <input id="discord" placeholder="Discord Link" class="btn outline">
+  <input id="tiktokClan" placeholder="TikTok Clan" class="btn outline">
+  <input id="tiktokAdmin" placeholder="TikTok Admin" class="btn outline">
+  <input id="igAdmin" placeholder="Instagram Admin" class="btn outline">
+  <button onclick="save()" class="btn admin">Simpan</button>
 </div>
 
-<script>
-  /* ===============================
-     PASSWORD HASH (SHA-256)
-     password asli: irp123
-  =============================== */
-  const HASH =
-  "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8";
-
-  async function sha256(text){
-    const data = new TextEncoder().encode(text);
-    const hash = await crypto.subtle.digest("SHA-256", data);
-    return Array.from(new Uint8Array(hash))
-      .map(b => b.toString(16).padStart(2,"0")).join("");
-  }
-
-  // SESSION LOGIN
-  if(sessionStorage.getItem("adminLogin") === "true"){
-    showPanel();
-  }
-
-  async function login(){
-    const input = document.getElementById("password").value;
-    if(await sha256(input) === HASH){
-      sessionStorage.setItem("adminLogin","true");
-      showPanel();
-    } else {
-      alert("Password salah");
-    }
-  }
-
-  function showPanel(){
-    document.getElementById("loginBox").classList.add("hidden");
-    document.getElementById("adminPanel").classList.remove("hidden");
-  }
-
-  function logout(){
-    sessionStorage.removeItem("adminLogin");
-    location.reload();
-  }
-
-  function save(){
-    if(clanName.value)
-      localStorage.setItem("clanName", clanName.value);
-    if(discordClan.value)
-      localStorage.setItem("discordClan", discordClan.value);
-    if(tiktokClan.value)
-      localStorage.setItem("tiktokClan", tiktokClan.value);
-
-    alert("Data berhasil disimpan");
-  }
-</script>
-
+<script src="admin.js"></script>
 </body>
 </html>
