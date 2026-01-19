@@ -7,41 +7,43 @@
 </head>
 <body>
 
-<script>
-if (!localStorage.getItem("init")) {
-  localStorage.setItem("NamaClan","INDORAYA ROLEPLAY COMMUNITY");
-  localStorage.setItem("DiscordClan","https://discord.gg/seQVnBbst8");
-  localStorage.setItem("TiktokClan","https://www.tiktok.com/@irp_official");
-  localStorage.setItem("TiktokAdmin","https://www.tiktok.com/@scrett_gtwl");
-  localStorage.setItem("InstagramAdmin","https://www.instagram.com/@zyraxx_18");
-  localStorage.setItem("init","1");
-}
-</script>
+<div class="container">
+  <img src="indoraya.jpg" class="logo" alt="Logo Indoraya">
 
-<div class="screen center">
-  <div class="card">
-    <h1 id="clanName">INDORAYA ROLEPLAY</h1>
-    <p class="subtitle">COMMUNITY</p>
+  <h1 id="clanName">INDORAYA ROLEPLAY COMMUNITY</h1>
 
-    <a id="discord" class="btn" target="_blank">DISCORD INDORAYA ROLEPLAY</a>
-    <a id="tiktokClan" class="btn" target="_blank">TIKTOK INDORAYA ROLEPLAY</a>
+  <a id="discordClan" class="btn" href="https://discord.gg/seQVnBbst8" target="_blank">
+    DISCORD INDORAYA ROLEPLAY
+  </a>
 
-    <div class="divider">ADMIN INDORAYA</div>
+  <a id="tiktokClan" class="btn" href="https://www.tiktok.com/@irp_official" target="_blank">
+    TIKTOK INDORAYA ROLEPLAY
+  </a>
 
-    <a id="igAdmin" class="btn" target="_blank">INSTAGRAM ADMIN</a>
-    <a id="ttAdmin" class="btn" target="_blank">TIKTOK ADMIN</a>
-
-    <a href="login.html" class="btn outline">LOGIN ADMIN</a>
+  <div class="admin-links">
+    <a href="https://www.tiktok.com/@scrett_gtwl" target="_blank">Admin TikTok</a>
+    <a href="https://www.instagram.com/zyraxx_18" target="_blank">Admin Instagram</a>
   </div>
 </div>
 
 <script>
-document.getElementById("clanName").innerText = localStorage.getItem("NamaClan");
-document.getElementById("discord").href = localStorage.getItem("DiscordClan");
-document.getElementById("tiktokClan").href = localStorage.getItem("TiktokClan");
-document.getElementById("igAdmin").href = localStorage.getItem("InstagramAdmin");
-document.getElementById("ttAdmin").href = localStorage.getItem("TiktokAdmin");
+  // animasi load
+  document.body.style.opacity = 0;
+  window.onload = () => {
+    document.body.style.transition = "opacity .8s ease";
+    document.body.style.opacity = 1;
+  };
+
+  // ambil data dari admin panel
+  if(localStorage.getItem("clanName")){
+    document.getElementById("clanName").innerText =
+      localStorage.getItem("clanName");
+    document.getElementById("discordClan").href =
+      localStorage.getItem("discordClan");
+    document.getElementById("tiktokClan").href =
+      localStorage.getItem("tiktokClan");
+  }
 </script>
 
 </body>
-</html>
+  </html>
