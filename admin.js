@@ -9,10 +9,22 @@ async function sha256(text){
 
 async function login(){
   const pass = document.getElementById("password").value;
+
   if(await sha256(pass) === HASH){
     localStorage.setItem("adminLogin","true");
-    location.reload();
-  } else alert("Password salah");
+
+    // animasi fade out login
+    const box = document.getElementById("loginBox");
+    box.style.transition = "0.4s ease";
+    box.style.opacity = 0;
+
+    setTimeout(() => {
+      location.reload();
+    }, 400);
+
+  } else {
+    alert("Password salah");
+  }
 }
 
 if(localStorage.getItem("adminLogin")==="true"){
