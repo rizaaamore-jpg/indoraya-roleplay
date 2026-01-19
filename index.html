@@ -1,49 +1,58 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>INDORAYA ROLEPLAY COMMUNITY</title>
-  <link rel="stylesheet" href="theme.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INDORAYA ROLEPLAY COMMUNITY</title>
+
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
 <div class="container">
-  <img src="indoraya.jpg" class="logo" alt="Logo Indoraya">
+  <img class="logo" src="https://rizaaamore-jpg.github.io/indoraya-roleplay/indoraya.jpg">
 
   <h1 id="clanName">INDORAYA ROLEPLAY COMMUNITY</h1>
 
-  <a id="discordClan" class="btn" href="https://discord.gg/seQVnBbst8" target="_blank">
-    DISCORD INDORAYA ROLEPLAY
+  <a id="discordLink" class="btn discord" target="_blank">
+    <i class="fab fa-discord"></i> Discord Indoraya
   </a>
 
-  <a id="tiktokClan" class="btn" href="https://www.tiktok.com/@irp_official" target="_blank">
-    TIKTOK INDORAYA ROLEPLAY
+  <a id="tiktokClanLink" class="btn tiktok" target="_blank">
+    <i class="fab fa-tiktok"></i> TikTok Indoraya
   </a>
 
-  <div class="admin-links">
-    <a href="https://www.tiktok.com/@scrett_gtwl" target="_blank">Admin TikTok</a>
-    <a href="https://www.instagram.com/zyraxx_18" target="_blank">Admin Instagram</a>
+  <div class="admin-section">
+    <a id="tiktokAdminLink" class="btn outline" target="_blank">
+      <i class="fab fa-tiktok"></i> Admin TikTok
+    </a>
+
+    <a id="igAdminLink" class="btn outline" target="_blank">
+      <i class="fab fa-instagram"></i> Admin Instagram
+    </a>
   </div>
+
+  <a href="admin.html" class="btn admin">
+    <i class="fas fa-user-shield"></i> Admin Panel
+  </a>
 </div>
 
 <script>
-  // animasi load
-  document.body.style.opacity = 0;
-  window.onload = () => {
-    document.body.style.transition = "opacity .8s ease";
-    document.body.style.opacity = 1;
-  };
+const data = JSON.parse(localStorage.getItem("indorayaData")) || {
+  name:"INDORAYA ROLEPLAY COMMUNITY",
+  discord:"https://discord.gg/seQVnBbst8",
+  tiktokClan:"https://www.tiktok.com/@irp_official",
+  tiktokAdmin:"https://www.tiktok.com/@scrett_gtwl",
+  igAdmin:"https://www.instagram.com/zyraxx_18"
+};
 
-  // ambil data dari admin panel
-  if(localStorage.getItem("clanName")){
-    document.getElementById("clanName").innerText =
-      localStorage.getItem("clanName");
-    document.getElementById("discordClan").href =
-      localStorage.getItem("discordClan");
-    document.getElementById("tiktokClan").href =
-      localStorage.getItem("tiktokClan");
-  }
+document.getElementById("clanName").innerText = data.name;
+document.getElementById("discordLink").href = data.discord;
+document.getElementById("tiktokClanLink").href = data.tiktokClan;
+document.getElementById("tiktokAdminLink").href = data.tiktokAdmin;
+document.getElementById("igAdminLink").href = data.igAdmin;
 </script>
 
 </body>
-  </html>
+</html>
