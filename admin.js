@@ -34,12 +34,18 @@ if(localStorage.getItem("adminLogin")==="true"){
 
 function save(){
   const data = {
-    name: name.value || undefined,
-    discord: discord.value || undefined,
-    tiktokClan: tiktokClan.value || undefined,
-    tiktokAdmin: tiktokAdmin.value || undefined,
-    igAdmin: igAdmin.value || undefined
+    name: name.value || "INDORAYA ROLEPLAY COMMUNITY",
+    discord: discord.value || "#",
+    tiktokClan: tiktokClan.value || "#",
+    tiktokAdmin: tiktokAdmin.value || "#",
+    igAdmin: igAdmin.value || "#"
   };
+
+  const old = JSON.parse(localStorage.getItem("indorayaData")) || {};
+  localStorage.setItem("indorayaData", JSON.stringify({ ...old, ...data }));
+
+  alert("Berhasil disimpan");
+}
 
   const old = JSON.parse(localStorage.getItem("indorayaData")) || {};
   localStorage.setItem("indorayaData", JSON.stringify({...old,...data}));
