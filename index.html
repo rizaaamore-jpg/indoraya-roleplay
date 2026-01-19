@@ -1,47 +1,45 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<title>INDORAYA ROLEPLAY</title>
-<link rel="stylesheet" href="theme.css">
+  <meta charset="UTF-8">
+  <title>INDORAYA ROLEPLAY</title>
+  <link rel="stylesheet" href="theme.css">
 </head>
-
 <body>
+
 <div class="card">
   <img id="logo" class="logo">
   <h1 id="clanName"></h1>
 
   <div class="section">COMMUNITY</div>
-  <a id="discordClan" target="_blank">Join Discord</a>
-  <a id="tiktokClan" target="_blank">TikTok Indoraya Roleplay</a>
+  <a id="discordClan" target="_blank">DISCORD INDORAYA ROLEPLAY</a>
+  <a id="tiktokClan" target="_blank">TIKTOK INDORAYA ROLEPLAY</a>
 
-  <div class="section">Rizaa_Amore</div>
-  <a id="igAdmin" target="_blank">Instagram Rizaa_Amore</a>
-  <a id="ttAdmin" target="_blank">TikTok Rizaa_Amore</a>
+  <div class="section">ADMIN</div>
+  <a id="igAdmin" target="_blank">INSTAGRAM ADMIN</a>
+  <a id="ttAdmin" target="_blank">TIKTOK ADMIN</a>
 
-  <a href="admin.html" class="admin-btn">Admin Panel</a>
+  <a href="admin.html" class="admin">ADMIN INDORAYA</a>
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded",()=>{
+if(!localStorage.getItem("init")){
+  localStorage.setItem("logo","https://cdn.discordapp.com/attachments/1462588340317720753/1462724110932115615/IMG-20260114-WA0012.jpg");
+  localStorage.setItem("clanName","INDORAYA ROLEPLAY");
+  localStorage.setItem("discordClan","https://discord.gg/Dh5xAcdMHP");
+  localStorage.setItem("tiktokClan","https://www.tiktok.com/@irp_official");
+  localStorage.setItem("igAdmin","https://www.instagram.com/zyraxx_18");
+  localStorage.setItem("ttAdmin","https://www.tiktok.com/@screet_gtwl");
+  localStorage.setItem("init","yes");
+}
 
-  if(!localStorage.getItem("init")){
-    localStorage.setItem("logo","https://cdn.discordapp.com/attachments/1462588340317720753/1462724110932115615/IMG-20260114-WA0012.jpg");
-    localStorage.setItem("clanName","INDORAYA ROLEPLAY");
-    localStorage.setItem("discordClan","https://discord.gg/Dh5xAcdMHP");
-    localStorage.setItem("tiktokClan","https://www.tiktok.com/@irp_official");
-    localStorage.setItem("igAdmin","https://www.instagram.com/zyraxx_18");
-    localStorage.setItem("ttAdmin","https://www.tiktok.com/@screet_gtwl");
-    localStorage.setItem("init","yes");
-  }
-
-  logo.src = localStorage.getItem("logo");
-  clanName.innerText = localStorage.getItem("clanName");
-  discordClan.href = localStorage.getItem("discordClan");
-  tiktokClan.href = localStorage.getItem("tiktokClan");
-  igAdmin.href = localStorage.getItem("igAdmin");
-  ttAdmin.href = localStorage.getItem("ttAdmin");
-});
+logo.src = localStorage.getItem("logo");
+clanName.innerText = localStorage.getItem("clanName");
+discordClan.href = localStorage.getItem("discordClan");
+tiktokClan.href = localStorage.getItem("tiktokClan");
+igAdmin.href = localStorage.getItem("igAdmin");
+ttAdmin.href = localStorage.getItem("ttAdmin");
 </script>
+
 </body>
 </html>
