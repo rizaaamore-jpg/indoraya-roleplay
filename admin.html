@@ -1,56 +1,76 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<title>Admin Panel</title>
-<link rel="stylesheet" href="theme.css">
+  <meta charset="UTF-8">
+  <title>Admin Panel - Indoraya</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="theme.css">
 </head>
-
 <body>
-<div class="card">
-  <h1>Admin Panel</h1>
 
-  <input id="pass" type="password" placeholder="Password admin" style="width:100%;padding:10px;border-radius:10px">
+<section class="fullscreen admin-bg">
 
-  <div id="panel" style="display:none">
-
-    <input id="logo" placeholder="Logo URL">
-    <input id="name" placeholder="Nama Clan">
-    <input id="dc" placeholder="Link Discord Clan">
-    <input id="ttc" placeholder="TikTok Clan">
-    <input id="ig" placeholder="Instagram Admin">
-    <input id="tta" placeholder="TikTok Admin">
-
-    <a onclick="save()">Simpan Perubahan</a>
+  <div class="admin-container" id="loginBox">
+    <h2>ADMIN LOGIN</h2>
+    <input type="password" id="password" placeholder="Password Admin">
+    <button onclick="login()">Masuk</button>
   </div>
-</div>
+
+  <div class="admin-container hidden" id="adminBox">
+    <h2>INDORAYA ADMIN PANEL</h2>
+
+    <label>Logo URL</label>
+    <input id="logoInput">
+
+    <label>Nama Clan</label>
+    <input id="nameInput">
+
+    <label>Discord Clan</label>
+    <input id="discordInput">
+
+    <label>TikTok Clan</label>
+    <input id="tiktokInput">
+
+    <label>Instagram Admin</label>
+    <input id="igInput">
+
+    <label>TikTok Admin</label>
+    <input id="ttInput">
+
+    <button onclick="save()">💾 Simpan</button>
+  </div>
+
+</section>
 
 <script>
-const REAL_PASSWORD = "rizaa123"; // GANTI PASSWORD DI SINI
+const ADMIN_PASSWORD = "irp123"; // GANTI SENDIRI
 
-pass.oninput = ()=>{
-  if(pass.value === REAL_PASSWORD){
-    panel.style.display="block";
-    pass.style.display="none";
+function login(){
+  if(password.value === ADMIN_PASSWORD){
+    loginBox.classList.add("hidden");
+    adminBox.classList.remove("hidden");
 
-    logo.value = localStorage.getItem("logo");
-    name.value = localStorage.getItem("clanName");
-    dc.value = localStorage.getItem("discordClan");
-    ttc.value = localStorage.getItem("tiktokClan");
-    ig.value = localStorage.getItem("igAdmin");
-    tta.value = localStorage.getItem("ttAdmin");
+    logoInput.value = localStorage.getItem("logo");
+    nameInput.value = localStorage.getItem("clanName");
+    discordInput.value = localStorage.getItem("discordClan");
+    tiktokInput.value = localStorage.getItem("tiktokClan");
+    igInput.value = localStorage.getItem("igAdmin");
+    ttInput.value = localStorage.getItem("ttAdmin");
+  } else {
+    alert("Password salah!");
   }
 }
 
 function save(){
-  localStorage.setItem("logo",logo.value);
-  localStorage.setItem("clanName",name.value);
-  localStorage.setItem("discordClan",dc.value);
-  localStorage.setItem("tiktokClan",ttc.value);
-  localStorage.setItem("igAdmin",ig.value);
-  localStorage.setItem("ttAdmin",tta.value);
+  localStorage.setItem("logo",logoInput.value);
+  localStorage.setItem("clanName",nameInput.value);
+  localStorage.setItem("discordClan",discordInput.value);
+  localStorage.setItem("tiktokClan",tiktokInput.value);
+  localStorage.setItem("igAdmin",igInput.value);
+  localStorage.setItem("ttAdmin",ttInput.value);
   alert("Berhasil disimpan!");
 }
 </script>
+
 </body>
 </html>
