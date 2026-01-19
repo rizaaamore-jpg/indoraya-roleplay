@@ -30,8 +30,10 @@ body{
 
 /* LOGO */
 .logo{
-  box-shadow:0 0 30px var(--primary-glow);
-  border:3px solid var(--accent);
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
 }
 
 /* LINK & BUTTON */
