@@ -1,82 +1,101 @@
 *{
-  margin:0;
-  padding:0;
   box-sizing:border-box;
-  font-family:Arial,Helvetica,sans-serif;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-  background:radial-gradient(circle at top,#3a0000,#000);
-  color:#fff;
-}
-
-.screen{
+  margin:0;
   width:100vw;
   height:100vh;
-}
-
-.center{
+  background:linear-gradient(180deg,#b00000,#ffffff);
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
 }
 
-.card{
-  background:rgba(0,0,0,.6);
-  padding:30px;
-  border-radius:16px;
-  width:90%;
+@keyframes fadeScale{
+  from{opacity:0; transform:scale(.9);}
+  to{opacity:1; transform:scale(1);}
+}
+
+@keyframes slideUp{
+  from{opacity:0; transform:translateY(25px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+.container{
+  width:100%;
   max-width:420px;
-  box-shadow:0 0 40px rgba(255,0,0,.35);
+  padding:30px;
+  background:#fff;
+  border-radius:20px;
   text-align:center;
+  box-shadow:0 20px 50px rgba(0,0,0,.25);
+  animation:fadeScale .8s ease forwards;
 }
 
-.card.wide{
-  max-width:520px;
+.logo{
+  width:140px;
+  height:140px;
+  object-fit:contain;
+  margin:0 auto 16px;
+  display:block;
+  animation:fadeScale 1s ease forwards;
 }
 
 h1{
-  font-size:26px;
-  letter-spacing:2px;
-}
-
-.subtitle{
-  color:#aaa;
-  margin-bottom:20px;
-}
-
-.divider{
-  margin:20px 0;
-  font-size:13px;
-  color:#888;
+  color:#b00000;
+  margin-bottom:18px;
+  animation:slideUp .9s ease forwards;
 }
 
 .btn{
   display:block;
-  margin:10px 0;
   padding:14px;
-  border-radius:30px;
-  background:linear-gradient(135deg,#c40000,#ff2a2a);
-  color:#fff;
+  margin:12px 0;
+  background:#b00000;
+  color:white;
   text-decoration:none;
+  border-radius:12px;
   font-weight:bold;
-  border:none;
+  animation:slideUp .9s ease forwards;
 }
 
-.btn:hover{
-  opacity:.85;
+.admin-links a{
+  display:block;
+  margin-top:8px;
+  color:#b00000;
+  text-decoration:none;
+  font-size:14px;
+  animation:slideUp .9s ease forwards;
 }
 
-.btn.outline{
-  background:transparent;
-  border:1px solid #ff2a2a;
-}
-
-input{
+input, button{
   width:100%;
-  padding:14px;
+  padding:12px;
   margin:10px 0;
   border-radius:10px;
+  border:1px solid #ccc;
+  animation:slideUp .9s ease forwards;
+}
+
+button{
+  background:#b00000;
+  color:white;
   border:none;
-  outline:none;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.logout{
+  background:#555;
+}
+
+.hidden{
+  display:none;
+}
+
+.note{
+  font-size:12px;
+  color:#666;
 }
