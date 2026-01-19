@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel</title>
+
+<style>
+body{
+  margin:0;
+  background:#000;
+  font-family:Segoe UI,sans-serif;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+.panel{
+  width:100%;
+  max-width:360px;
+  background:rgba(255,255,255,.05);
+  backdrop-filter:blur(12px);
+  border-radius:18px;
+  padding:25px;
+}
+input,button{
+  width:100%;
+  margin-top:12px;
+  padding:14px;
+  border-radius:12px;
+  border:none;
+}
+input{background:#111;color:white}
+button{
+  background:linear-gradient(135deg,#2d2dff,#7f00ff);
+  color:white;
+  font-weight:bold;
+}
+.hidden{display:none}
+</style>
+</head>
+
+<body>
+<div class="panel">
+
+<div id="login">
+  <h3>Admin Login</h3>
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="login()">Login</button>
+</div>
+
+<div id="admin" class="hidden">
+  <h3>Logo URL</h3>
+  <input id="logoInput">
+
+  <h3>Clan</h3>
+  <input id="clanInput">
+  <input id="discordInput">
+  <input id="tiktokClanInput">
+
+  <h3>Admin</h3>
+  <input id="igInput">
+  <input id="ttInput">
+
+  <button onclick="save()">Simpan</button>
+</div>
+
+</div>
+
+<script>
+  // 🔑 PASSWORD ADMIN (GANTI DI SINI)
+  const REAL_PASSWORD = "rizaa123";
+
+  function login(){
+    if(password.value === REAL_PASSWORD){
+      login.classList.add("hidden");
+      admin.classList.remove("hidden");
+
+      logoInput.value = localStorage.getItem("logo");
+      clanInput.value = localStorage.getItem("clanName");
+      discordInput.value = localStorage.getItem("discordClan");
+      tiktokClanInput.value = localStorage.getItem("tiktokClan");
+      igInput.value = localStorage.getItem("igAdmin");
+      ttInput.value = localStorage.getItem("ttAdmin");
+    }else{
+      alert("Password salah");
+    }
+  }
+
+  function save(){
+    localStorage.setItem("logo",logoInput.value);
+    localStorage.setItem("clanName",clanInput.value);
+    localStorage.setItem("discordClan",discordInput.value);
+    localStorage.setItem("tiktokClan",tiktokClanInput.value);
+    localStorage.setItem("igAdmin",igInput.value);
+    localStorage.setItem("ttAdmin",ttInput.value);
+    alert("Data berhasil disimpan");
+  }
+</script>
+
+</body>
+</html>
